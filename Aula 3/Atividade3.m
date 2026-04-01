@@ -92,3 +92,14 @@ fprintf("A saída esperada é:\n")
 D=D'
 fprintf("A saída da rede é: \n")
 Y
+
+%%Calculo o acerto
+acerto=0;
+for i=1:L1 
+    z=isequal(Y(:,i),D(:,1));
+    if z==1
+    acerto=acerto+1;
+    end
+end
+
+fprintf("Porcentagem de acerto e: %0.2f %%\n", (acerto/L1)*100)
